@@ -17,4 +17,4 @@ jobs:
                 echo ${GITHUB_WORKSPACE}
                 ls ${GITHUB_WORKSPACE}
             - name: run script
-              run: ./${GITHUB_WORKSPACE}/hello.sh
+              run: ${GITHUB_WORKSPACE}/hello.sh
