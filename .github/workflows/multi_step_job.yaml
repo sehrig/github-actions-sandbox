@@ -10,5 +10,11 @@ jobs:
                 FOO: bar
             - name: checkout repo 
               uses: actions/checkout@v4
+            - name: show folder
+              run: |
+                pwd
+                ls
+                echo ${GITHUB_WORKSPACE}
+                ls ${GITHUB_WORKSPACE}
             - name: run script
               run: ./${GITHUB_WORKSPACE}/hello.sh
