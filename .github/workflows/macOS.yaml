@@ -1,0 +1,8 @@
+name: macOSJob
+on: [push, pull_request]
+jobs:
+    macos-echo:
+        runs-on: macos-latest
+        steps:
+            - run: echo "I'm a pull request or push job."
+            - run: env
