@@ -1,0 +1,15 @@
+name: branch-dependent-step
+on: [push, pull_request]
+jobs:
+    branch-dependent-step-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: GITHUB_HEAD_REF
+              if: github.event_name == 'pull_request'
+              run: echo "${GITHUB_HEAD_REF}"
+            - name: GITHUB_BASE_REF
+              if: github.event_name == 'pull_request'
+              run: echo "${GITHUB_BASE_REF}"
+            - name: run only push
+              if: github.event_name == 'push'
+              run: echo "$GITHUB_REF_NAME"
