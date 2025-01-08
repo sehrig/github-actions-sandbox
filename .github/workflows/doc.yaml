@@ -18,7 +18,7 @@ jobs:
           path: sw/docs/out/html
   
   deploy:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && github.repository_owner == 'SimeonEhrig'
     permissions:
       contents: read
       pages: write
