@@ -1,0 +1,12 @@
+name: Publish documentation to gh-pages
+
+on: [push, pull_request]
+
+jobs:
+  gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v3
+        - uses: mattnotmitt/doxygen-action@v1.9.5
+          with:
+            working-directory: sw/docs
