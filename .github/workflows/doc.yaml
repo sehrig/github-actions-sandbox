@@ -18,6 +18,7 @@ jobs:
           path: sw/docs/out/html
   
   deploy:
+    if: github.ref == 'refs/heads/develop'
     permissions:
       contents: read
       pages: write
